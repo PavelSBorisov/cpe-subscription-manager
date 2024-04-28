@@ -1,0 +1,29 @@
+﻿@model IEnumerable<NETB401PavelBorisov.Models.Cpe>
+
+<h2>CPE Subscriptions Table</h2>
+
+<table class="table">
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <tr>
+        <th>Id</th>
+        <th>CpeId</th>
+        <th>SubscriberEmails</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+            <td>@Html.DisplayFor(modelItem => item.CpeId)</td>
+            <td>@Html.DisplayFor(modelItem => item.SubscriberEmails)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
